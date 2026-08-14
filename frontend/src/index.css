@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+  background: rgb(226, 226, 226);
+  backdrop-filter: blur(10px);
+}
+
+.hero-swiper .swiper-button-prev::after,
+.hero-swiper .swiper-button-next::after {
+  color: white;
+  font-size: 16px;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  width: 8px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 9999px;
+  background: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+.hero-swiper .swiper-button-prev::after,
+.hero-swiper .swiper-button-next::after {
+  font-size: 5px;
+  color: white;
+  font-weight: 700;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.guideline-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.guideline-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.guideline-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+  transition: background 0.3s;
+}
+
+/* Show colored scrollbar on hover */
+.guideline-container:hover::-webkit-scrollbar-thumb {
+  background: #2563eb; /* blue-600 */
+}
+
+.guideline-container:hover::-webkit-scrollbar-track {
+  background: #e5e7eb; /* gray-200 */
+}
+
+/* Firefox */
+.guideline-container {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.guideline-container:hover {
+  scrollbar-color: #2563eb #e5e7eb;
+}
+
+.breadcrumb-banner {
+  position: relative;
+  overflow: hidden;
+  background: #1e40af;
+}
+
+.breadcrumb-banner::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}

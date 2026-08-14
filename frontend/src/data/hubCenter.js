@@ -1,0 +1,40 @@
+export const htaResourceData = {
+  hubs: [
+    "Department of Paediatric Pulmonology, Post Graduate Institute of Medical Education and Research (PGIMER), Chandigarh, Punjab.",
+    "Department of Neurology, All India Institute of Medical Sciences (AIIMS), New Delhi.",
+    "Department of Reproductive Medicine and Surgery, Christian Medical College, Vellore.",
+    "Division of Evidence Synthesis, Datta Meghe Institute of Higher Education and Research (DMIHER), Wardha, Maharashtra.",
+    "Department of Pharmacy Practice, National Institute of Pharmaceutical Education and Research (NIPER), Guwahati, Assam.",
+    "Department of Surgical Oncology, Tata Memorial centre, Mumbai."
+  ],
+
+  rrcs: [
+    "Department of Laboratory Medicine, Rajendra Institute of Medical Sciences, Ranchi, Jharkhand.",
+"Department of Pediatric Surgery, All India Institute of Medical Sciences, New Delhi.",
+"Department of Pharmacy Practices, National Institute of Pharmaceutical Education and Research (NIPER), Mohali, Punjab.",
+"Department of Orthopedics, Postgraduate Institute of Medical Education and Research, Chandigarh.",
+"Department of Pharmacology, All India Institute of Medical Sciences, Jodhpur, Rajasthan.",
+"Department of Epidemiology and Clinical Research, Institute of Liver and Biliary Sciences, New Delhi.",
+"Department of Pharmacology, All India Institute of Medical Sciences Gorakhpur, Uttar Pradesh.",
+"Division of Medical Research, SRM Medical College Hospital and Research Centre, SRM Institute of Science and Technology, Kattankulathur, Tamil Nadu.",
+"ICMR-Centre for Ageing and Mental Health, Kolkata, West Bengal.",
+"Centre for Dental Education and Research, AIIMS, New Delhi.",
+"ICMR-National Institute for Research in Tuberculosis, Chennai, Tamil Nadu.",
+"Department of Infectious Diseases, Christian Medical College, Vellore, Tamil Nadu.",
+"Department of Prosthodontics, King George’s Medical University, Lucknow, Uttar Pradesh.",
+"Department of Pediatrics, All India Institute of Medical Sciences, Bhopal, Madhya Pradesh.",
+"Department of Public Health, MS Ramaiah University of Applied Sciences, Karnataka.",
+"Department of Biochemistry, All India Institute of Medical Sciences, Deoghar, Jharkhand.",
+"Faculty of Nursing, Sri Ramachandra Institute of Higher Education and Research (Deemed to be University), Porur, Chennai, Tamil Nadu.",
+"Department of Pediatric and Preventive Dentistry, Sri Ramchandra Institute of Higher Education and Research, Porur, Chennai, Tamil Nadu.",
+"Department of Community Medicine, All Indian Institute of Medical Sciences, Nagpur, Maharashtra.",
+"Department of Palliative Medicine and Supportive Care, KMC, MAHE, Manipal, Karnataka.",
+"Department of Pharmacology, All India Institute of Medical Sciences, Guwahati, Assam.",
+"Department of Ophthalmology, All India Institute of Medical Sciences, Guwahati, Assam.",
+"School of Public Health, Postgraduate Institute of Medical Education and Research, Chandigarh, Punjab.",
+"Department of Neonatology, Postgraduate Institute of Medical Education and Research, Chandigarh.",
+"Department of Pharmacy Practice, Manipal College of Pharmaceutical Sciences, Karnataka.",
+"Department of Public Health, Kalyan Singh Super Specialty Cancer Institute, Lucknow, Uttar Pradesh.",
+"ICMR-National Institute for Research in Tuberculosis, Chennai, Tamil Nadu."
+  ],
+};

@@ -41,7 +41,7 @@ const skills = [
     name: "Ongoing Guidelines",
     percentage: "",
     icon: <img src={icons5} alt="Ongoing Guidelines" className="w-12 h-12  p-2 xl:p-0 xl:text-4xl" />,
-    path: "#",
+    path: "/ongoing-guidelines",
   },
   {
     name: "Total Guidelines",

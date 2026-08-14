@@ -17,6 +17,7 @@ import WorkshopsConducted from '../pages/WorkshopsConducted'
 import Contact from '../pages/Contact'
 import PhotoGallery from '../pages/PhotoGallery'
 import VideoSection from '../pages/VideoSection'
+import OngoingGuidelines from '../pages/OngoingGuidelines'
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -36,6 +37,7 @@ const AppRoutes = () => {
                 <Route path='/workshop-conducted' element={<WorkshopsConducted/>} />
                 <Route path='/gallery' element={<PhotoGallery />} />
                 <Route path='/videos' element={<VideoSection />} />
+                <Route path='ongoing-guidelines' element={<OngoingGuidelines/>} />
                 <Route path='/contact' element={<Contact />}/>
            </Route>
         </Routes>

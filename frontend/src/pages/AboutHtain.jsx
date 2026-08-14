@@ -2,7 +2,6 @@ import React from 'react'
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import assets from '../assets/assets';
 import { FaEyeLowVision } from "react-icons/fa6";
 import { SiTransmission } from "react-icons/si";
@@ -55,8 +54,7 @@ const AboutHtain = () => {
 
                 <div className="flex items-center gap-3 mt-4 text-sm">
                 <a
-                    href="/"
-                    className="text-gray-300 font-medium hover:text-blue-300 transition"
+                    href="/" className="text-gray-300 font-medium hover:text-blue-300 transition"
                 >
                     Home
                 </a>

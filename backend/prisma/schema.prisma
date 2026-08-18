@@ -21,3 +21,16 @@ model User {
 
   @@map("users")
 }
+model Banner {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(255)
+  image     String   @db.VarChar(500)
+  link      String?  @db.VarChar(500)
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, sortOrder])
+  @@map("banners")
+}

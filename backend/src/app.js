@@ -8,6 +8,7 @@ import rateLimit from "express-rate-limit";
 import pinoHttp from "pino-http";
 import authRoutes from "./routes/auth.routes.js";
 import session from "express-session";
+import bannerRoutes from "./routes/banner.routes.js";
 
 const app = express();
 
@@ -122,6 +123,7 @@ app.get("/api/health", (req, res) => {
     });
 });
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/banners", bannerRoutes);
 
 /*
 |--------------------------------------------------------------------------

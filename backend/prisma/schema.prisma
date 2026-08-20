@@ -7,6 +7,19 @@ datasource db {
   provider = "mysql"
 }
 
+model WhatsNew {
+  id            Int      @id @default(autoincrement())
+  title         String   @db.VarChar(255)
+  type          String   @db.VarChar(30) // pdf | external_link
+  file_path     String?  @db.VarChar(500)
+  external_link String?  @db.VarChar(1000)
+  status        Boolean  @default(true)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  @@map("whats_new")
+}
+
 model User {
   id                  Int       @id @default(autoincrement())
   username            String    @unique
@@ -20,4 +33,17 @@ model User {
   updatedAt            DateTime  @updatedAt @map("updated_at")
 
   @@map("users")
+}
+model Banner {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(255)
+  image     String   @db.VarChar(500)
+  link      String?  @db.VarChar(500)
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, sortOrder])
+  @@map("banners")
 }

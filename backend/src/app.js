@@ -9,6 +9,8 @@ import pinoHttp from "pino-http";
 import authRoutes from "./routes/auth.routes.js";
 import session from "express-session";
 import bannerRoutes from "./routes/banner.routes.js";
+import whatsNewRoutes from "./routes/whatsNew.routes.js";
+import path from "path";
 
 const app = express();
 
@@ -124,6 +126,12 @@ app.get("/api/health", (req, res) => {
 });
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/banners", bannerRoutes);
+// Uploaded files
+app.use("/uploads",express.static(path.join(process.cwd(), "uploads")));
+
+// What's New API
+app.use("/api/whats-new",whatsNewRoutes);
+
 
 /*
 |--------------------------------------------------------------------------

@@ -18,6 +18,7 @@ import Contact from '../pages/Contact'
 import PhotoGallery from '../pages/PhotoGallery'
 import VideoSection from '../pages/VideoSection'
 import OngoingGuidelines from '../pages/OngoingGuidelines'
+import Login from '../pages/Login'
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -38,6 +39,7 @@ const AppRoutes = () => {
                 <Route path='/gallery' element={<PhotoGallery />} />
                 <Route path='/videos' element={<VideoSection />} />
                 <Route path='ongoing-guidelines' element={<OngoingGuidelines/>} />
+                <Route path='login' element={<Login/>} />
                 <Route path='/contact' element={<Contact />}/>
            </Route>
         </Routes>

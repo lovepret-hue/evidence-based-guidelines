@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react";
+import assets from '../assets/assets'
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -47,6 +48,31 @@ const PhotoGallery = () => {
       caption: "Innovation and Technology Meet",
       date:'14-07-2026'
     },
+     {
+      src: "https://dhr.gov.in/static/uploads/2026/05/8f9138e4fd8f9448c4af95b60b66569c.png",
+      caption: "Innovation and Technology Meet",
+      date:'14-07-2026'
+    },
+     {
+      src: "https://dhr.gov.in/static/uploads/2026/05/8f9138e4fd8f9448c4af95b60b66569c.png",
+      caption: "Innovation and Technology Meet",
+      date:'14-07-2026'
+    },
+     {
+      src: "https://dhr.gov.in/static/uploads/2026/05/8f9138e4fd8f9448c4af95b60b66569c.png",
+      caption: "Innovation and Technology Meet",
+      date:'14-07-2026'
+    },
+     {
+      src: "https://dhr.gov.in/static/uploads/2026/05/8f9138e4fd8f9448c4af95b60b66569c.png",
+      caption: "Innovation and Technology Meet",
+      date:'14-07-2026'
+    },
+     {
+      src: "https://dhr.gov.in/static/uploads/2026/05/8f9138e4fd8f9448c4af95b60b66569c.png",
+      caption: "Innovation and Technology Meet",
+      date:'14-07-2026'
+    },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -68,6 +94,14 @@ const PhotoGallery = () => {
       (prev) => (prev - 1 + images.length) % images.length
     );
   };
+
+const itemsPerPage = 8;
+const [currentPage, setCurrentPage] = useState(1);
+const totalPages = Math.ceil(images.length / itemsPerPage);
+const currentImages = images.slice(
+  (currentPage - 1) * itemsPerPage,
+  currentPage * itemsPerPage
+);
 
   return (
      <>
@@ -116,33 +150,72 @@ const PhotoGallery = () => {
         </nav>
     
       <div className="mx-auto container py-16 px-4">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {images.map((image, index) => (
-                <>
+       <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+          {currentImages.map((image, index) => (
             <div
-                key={index}
-                onClick={() => openImage(index)}
-                className="group relative cursor-pointer overflow-hidden rounded-xl shadow-md"
+              key={index}
+              onClick={() =>
+                openImage((currentPage - 1) * itemsPerPage + index)
+              }
+              className="group relative cursor-pointer overflow-hidden rounded-xl shadow-md"
             >
-                <div className='h-60 overflow-hidden'>
-                    <img
-                        src={image.src}
-                        alt={image.caption}
-                        className="h-60 w-full object-cover transition duration-300 group-hover:scale-110"
-                    />
-                </div>   
-                <div className="bg-gray-200 p-4">
-                    <p className="font-medium line-clamp-1" title={image.caption}>
-                        {image.caption}
-                    </p>
-                  <span className='text-gray-800 p-1 font-medium rounded-md text-sm'> {image.date}</span>
-                </div>
-            </div>
-            </>
-            ))}
-        </div>
+              <div className="h-60 overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.caption}
+                  className="h-60 w-full object-cover transition duration-300 group-hover:scale-110"
+                />
+              </div>
 
-      {selectedIndex !== null && (
+              <div className="bg-gray-200 p-4">
+                <p
+                  className="font-medium line-clamp-1"
+                  title={image.caption}
+                >
+                  {image.caption}
+                </p>
+
+                <span className="rounded-md p-1 text-sm font-medium text-gray-800">
+                  {image.date}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+          <div className="mt-10 flex items-center justify-center gap-2">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+              disabled={currentPage === 1}
+              className="rounded-md border px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Previous
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`h-10 w-10 rounded-md ${
+                  currentPage === i + 1
+                    ? "bg-blue-600 text-white"
+                    : "border hover:bg-gray-100"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() =>
+                setCurrentPage((p) => Math.min(p + 1, totalPages))
+              }
+              disabled={currentPage === totalPages}
+              className="rounded-md border px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Next
+            </button>
+          </div>
+        {selectedIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4">
           <button
             onClick={closeModal}

@@ -70,6 +70,7 @@ const Navbar = () => {
             >
               <Menu size={28} />
             </button>
+           
           </div>
         </div>
       </nav>

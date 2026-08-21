@@ -1,13 +1,56 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, LockKeyhole, Mail } from "lucide-react";
-
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+   const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Login submitted");
-  };
+  const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        setError("");
+        setLoading(true);
+
+        try {
+            const response = await fetch(
+                "http://localhost:5000/api/v1/auth/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        username,
+                        password,
+                    }),
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || "Login failed");
+            }
+
+            console.log("Login successful:", data);
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(data.user)
+            );
+
+            // Redirect here
+            window.location.href = "/dashboard";
+
+        } catch (error) {
+            console.error("Login Error:", error);
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-800 via-blue-600 to-pink-500 flex items-center justify-center px-4 py-5">
@@ -36,7 +79,11 @@ const Login = () => {
               Sign in to continue to your account
             </p>
           </div>
-
+           {error && (
+              <div className="mb-4 p-3 bg-red-100 text-red-600 rounded">
+                  {error}
+              </div>
+            )}
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
 
@@ -53,9 +100,11 @@ const Login = () => {
                 />
 
                 <input
-                  type="email"
-                  placeholder="Enter your email"
+                  type="text"
+                  placeholder="Enter your username"
                   required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition"
                 />
               </div>
@@ -80,6 +129,8 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-12 pr-12 py-3.5 border border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition"
                 />
 

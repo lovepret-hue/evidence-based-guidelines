@@ -49,7 +49,7 @@ const AboutHtain = () => {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div>
                 <h1 className="text-2xl lg:text-4xl font-medium text-white">
-                Gallery <span className="font-medium">Meadia</span>
+                About <span className="font-medium">CEG</span>
                 </h1>
 
                 <div className="flex items-center gap-3 mt-4 text-sm">

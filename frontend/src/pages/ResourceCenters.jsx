@@ -3,6 +3,10 @@ import assets from '../assets/assets'
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BsTwitterX } from "react-icons/bs";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 const resourceHubs = [
 "Department of Laboratory Medicine, Rajendra Institute of Medical Sciences, Ranchi, Jharkhand.",
 "Department of Pediatric Surgery, All India Institute of Medical Sciences, New Delhi.",
@@ -65,19 +69,51 @@ const ResourceCenters = () => {
     }, []);
   
     const headingText =
-      "CGA Resource Centres (RRCs)";
+      "CEG Resource Centres (CRCs)";
   return (
     <>
-    <section>
-       <div className="w-full min-h-[280px] flex items-center justify-center relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: `url(${assets.htainBanner})` }}
-            >
-              <div className="absolute inset-0 bg-black/50"></div>
-              <h1 className="relative z-10 text-white text-4xl font-bold uppercase">
-               Introduction
+   <nav className="breadcrumb-banner relative overflow-hidden">
+      <div className="container mx-auto px-5 lg:px-8 py-8 lg:py-14">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div>
+              <h1 className="text-2xl lg:text-4xl font-medium text-white">
+              About <span className="font-medium">CEG</span>
               </h1>
-        </div>
-    </section>
+
+              <div className="flex items-center gap-3 mt-4 text-sm">
+              <a
+                  href="/" className="text-gray-300 font-medium hover:text-blue-300 transition"
+              >
+                  Home
+              </a>
+
+              <span className="text-slate-400">&gt;</span>
+
+              <span className="text-white">
+                About Us
+              </span>
+              </div>
+          </div>
+
+          <div className="flex-grow-0 lg:flex items-center gap-5 bg-violet-500 px-6 py-3 rounded-full shadow-lg hidden">
+              <button className="text-white hover:scale-110 transition">
+                <BsTwitterX/>
+              </button>
+
+              <button className="text-white hover:scale-110 transition">
+              <FaLinkedinIn/>
+              </button>
+
+              <button className="text-white hover:scale-110 transition">
+                <FaFacebookF/>
+              </button>
+              <button className="text-white hover:scale-110 transition">
+                <FaInstagram/>
+              </button>
+          </div>
+      </div>
+      </div>
+    </nav>
     <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-blue-50 py-16 lg:py-20">
       {/* Background Elements */}
       <div className="absolute inset-0">

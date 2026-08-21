@@ -18,7 +18,12 @@ import Contact from '../pages/Contact'
 import PhotoGallery from '../pages/PhotoGallery'
 import VideoSection from '../pages/VideoSection'
 import OngoingGuidelines from '../pages/OngoingGuidelines'
-import Login from '../pages/Login'
+
+// import DashboardLayout from '../layouts/DashboardLayout'
+import ProtectedRoute from './ProtectedRoute'
+import Login from '../pages/auth/Login'
+import Dashboard from '../pages/auth/Dashboard'
+import CompletedGuidelines from '../pages/CompletedGuidelines'
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -38,10 +43,17 @@ const AppRoutes = () => {
                 <Route path='/workshop-conducted' element={<WorkshopsConducted/>} />
                 <Route path='/gallery' element={<PhotoGallery />} />
                 <Route path='/videos' element={<VideoSection />} />
-                <Route path='ongoing-guidelines' element={<OngoingGuidelines/>} />
-                <Route path='login' element={<Login/>} />
+                <Route path='/ongoing-guidelines' element={<OngoingGuidelines/>} />
+                <Route path='/completed-guidelines' element={<CompletedGuidelines/>}/>
                 <Route path='/contact' element={<Contact />}/>
            </Route>
+           {/* admin Route */}
+
+           <Route path='/login' element={<Login/>} />
+           <Route path="/dashboard" element={<Dashboard />} />
+            {/* <Route element={<ProtectedRoute />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Route> */}
         </Routes>
     </BrowserRouter>
   )

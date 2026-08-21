@@ -10,7 +10,7 @@ import indiaMap from "./indiamap.png";
 import submission from "./submission.jpg";
 import process from "./process.jpg";
 import cancer from "./cancer-treatment.jpg";
-
+import guidelines from './guidelines.png';
 import icons1 from "./icons/mission.png";
 import icons2 from "./icons/opportunity.png";
 
@@ -35,6 +35,7 @@ const assets = {
   icons2,
   photo1,
   photo2,
+  guidelines
 };
 
 export default assets

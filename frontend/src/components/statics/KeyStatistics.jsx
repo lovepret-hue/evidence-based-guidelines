@@ -14,14 +14,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
   {
-    name: "Resource Hubs",
-    percentage: "08",
+    name: "Technical Resource Hubs",
+    percentage: "06",
     icon: <img src={icons1} alt="Resource Hubs" className="w-12 h-12 p-2 xl:p-0 xl:text-4xl" />,
     path: "/resource-hubs",
   },
   {
-    name: "Resource Centers",
-    percentage: "20",
+    name: "Technical Resource Centers",
+    percentage: "27",
     icon: <img src={icons2} alt="Resource Centers" className="w-12 h-12 p-2 xl:p-0 xl:text-4xl" />,
     path: "/resource-centers",  
   },
@@ -33,19 +33,19 @@ const skills = [
   },
   {
     name: "Completed Guidelines",
-    percentage: "",
+    percentage: "12",
     icon: <img src={icons4} alt="Guidelines Completed" className="w-12 h-12 p-2 xl:p-0 xl:text-4xl" />,
-    path: "#",
+    path: "/completed-guidelines",
   },
   {
     name: "Ongoing Guidelines",
-    percentage: "",
+    percentage: "20",
     icon: <img src={icons5} alt="Ongoing Guidelines" className="w-12 h-12  p-2 xl:p-0 xl:text-4xl" />,
     path: "/ongoing-guidelines",
   },
   {
     name: "Total Guidelines",
-    percentage: "",
+    percentage: "32",
     icon: <img src={icons6} alt="Total Guidelines" className="w-12 h-12  p-2 xl:p-0 xl:text-4xl" />,
     path: "#",
   },

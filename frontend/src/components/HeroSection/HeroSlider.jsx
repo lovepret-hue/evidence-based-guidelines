@@ -60,7 +60,7 @@ const HeroSlider = () => {
       md:h-[55vh]
       lg:h-[70vh]
       xl:h-[85vh]
-      2xl:h-screen
+      2xl:[90vh]
     "
   >
     {slides?.map((slide, index) => (
@@ -78,7 +78,7 @@ const HeroSlider = () => {
           />
 
           {/* Optional Overlay */}
-          <div className="absolute inset-0 bg-black/20"></div>
+          {/* <div className="absolute inset-0 bg-black/20"></div> */}
 
           {/* Optional Content */}
           <div className="absolute inset-0 flex items-center justify-center px-4">

@@ -194,6 +194,9 @@ const StemCellTherapyGuidelines = () => {
                 <table className="w-full">
                   <thead className="hidden md:table-header-group">
                     <tr className="bg-slate-100">
+                       <th className="px-6 py-4 text-left font-semibold text-slate-700">
+                        S No.
+                      </th>
                       <th className="px-6 py-4 text-left font-semibold text-slate-700">
                         Document Name
                       </th>
@@ -212,6 +215,21 @@ const StemCellTherapyGuidelines = () => {
                           hover:bg-blue-50 transition
                         "
                       >
+                        <td className="px-4 py-4 md:px-6 md:py-5">
+                          <span
+                            className="
+                              inline-flex items-center justify-center
+                              w-9 h-9
+                              rounded-full
+                              bg-blue-600
+                              text-white
+                              text-sm font-semibold
+                              shadow-sm
+                            "
+                          >
+                            {index + 1}
+                          </span>
+                        </td>
                         <td
                           className="
                             block pb-3 md:table-cell

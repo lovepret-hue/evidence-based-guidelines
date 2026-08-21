@@ -130,9 +130,9 @@ const Secretary = () => {
             </h3>
 
             <ul className="space-y-3 text-slate-600">
-              <li>MD Pediatrics</li>
-              <li>PhD Public Health</li>
-              <li>Honorary Doctorate, Norway</li>
+              <li>MD Pediatrics: University of Delhi</li>
+              <li>PhD: All India Institute of Medical Sciences</li>
+              <li>He received an Honorary Doctorate from University of Bergen, Norway, in 2022 in recognition of his contributions to maternal and child health research.</li>
             </ul>
           </div>
 

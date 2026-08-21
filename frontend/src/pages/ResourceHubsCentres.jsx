@@ -40,7 +40,7 @@ const ResourceHubsCentres = () => {
     }, []);
   
     const headingText =
-      "CGA Resource Network Across India";
+      "CEG Resource Network Across India";
   return (
     <>
    
@@ -90,7 +90,7 @@ const ResourceHubsCentres = () => {
     <section className="bg-slate-50 py-20">
       <div className="container mx-auto px-4">
         <div className='text-center pb-8'>
-             <p class="inline-block px-4 py-2 text-sm font-medium bg-red-100 text-red-600 rounded-full mb-4">CGA Resource</p>
+             <p class="inline-block px-4 py-2 text-sm font-medium bg-red-100 text-red-600 rounded-full mb-4">CEG Resource</p>
           <h2
               ref={titleRef}
               className="text-2xl mt-4 md:text-4xl lg:text-4xl text-center font-bold text-gray-900 mb-6 leading-tight overflow-hidden"
@@ -134,7 +134,7 @@ const ResourceHubsCentres = () => {
             {/* Resource Hubs */}
             <div className="bg-white rounded-3xl shadow-lg p-4 xl:p-8">
               <h3 className="text-2xl mb-6">
-               CGA  Resource Hubs
+               CEG  Resource Hubs
               </h3>
 
               <div className="space-y-3">
@@ -157,7 +157,7 @@ const ResourceHubsCentres = () => {
         <div className='grid grid-cols-1 mt-8'>
           <div className="bg-white rounded-3xl shadow-lg p-4 xl:p-8">
               <h3 className="text-2xl mb-4">
-               CGA Resource Centres (RRCs)
+               CEG Resource Centres (CRCs)
               </h3>
               <div className="grid md:grid-cols-2 gap-3">
                 {htaResourceData.rrcs.map((centre, index) => (

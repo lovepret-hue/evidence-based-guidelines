@@ -1,10 +1,5 @@
 import React from 'react'
 import {
-  HeartPulse,
-  Droplets,
-  Bug,
-  Baby,
-  Brain,
   Globe,
   ChevronRight,
   ShieldCheck,
@@ -18,36 +13,27 @@ import { Link } from 'react-router-dom';
 
   const categories = [
     {
-      icon: HeartPulse,
       title: "Gazette Notification for National Registry",
-      count: 25,
-      path: "/gazette-notification-national-registry",
+      pdf: "/pdfs/national-registry.pdf",
     },
     {
-      icon: Droplets,
-      title: "Gazette notification for UT Board With and Without Legislature",
-      count: 18,
-      path: "/gazette-notification-ut-board",
+      title: "Gazette Notification for UT Board With and Without Legislature",
+      pdf: "/pdfs/ut-board.pdf",
     },
     {
-      icon: Bug,
       title: "Gazette Notification Appropriate Authority",
-      count: 32,
-      path: "/gazette-notification-appropriate-authority",
+      pdf: "/pdfs/appropriate-authority.pdf",
     },
     {
-      icon: Baby,
       title: "Gazette Notification National ART and Surrogacy Board",
-      count: 21,
-      path: "/gazette-notification-national-art-surrogacy-board",
+      pdf: "/pdfs/national-art-surrogacy-board.pdf",
     },
     {
-      icon: Brain,
-      title: "Gazette notification for removal of difficulty (ART Act and Surrogacy Act, 2021)",
-      count: 16,
-      path: "/gazette-notification-removal-of-difficulty",
+      title:
+        "Gazette Notification for Removal of Difficulty (ART Act and Surrogacy Act, 2021)",
+      pdf: "/pdfs/removal-of-difficulty.pdf",
     },
-  ];
+ ];
 
   const whatsNewData = [
   {
@@ -74,7 +60,7 @@ const importantLinks = [
   {
     title: "Ethics",
     icon: ShieldCheck,
-    path: "https://ethics.icmr.org.in",
+    path: "https://naitik.gov.in/DHR/Homepage",
   },
   {
     title: "ICMR",
@@ -109,29 +95,69 @@ const WhatsNew = () => {
               </button>
             </div>
               <div className="guideline-container max-h-[400px] overflow-y-auto">
-                {categories.map((item) => {
-                  const Icon = item.icon;
+                <div className="w-full max-w-md overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+                  <div>
+                    {categories.map((item, index) => (
+                      <a
+                        key={index}
+                        href={item.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 border-b border-gray-100 px-5 py-4 transition-all duration-200 hover:bg-blue-50/40"
+                      >
+                        {/* PDF Icon */}
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-all duration-200 group-hover:bg-blue-600 group-hover:text-white">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M6 4.5A2.5 2.5 0 018.5 2h7L20 6.5V19a2.5 2.5 0 01-2.5 2.5h-9A2.5 2.5 0 016 19V4.5z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15 2v5h5"
+                            />
+                          </svg>
+                        </div>
 
-                  return (
-                    <Link
-                      key={item.title}
-                      to={item.path}
-                      className="flex items-center justify-between border-t border-gray-100 px-5 py-4 hover:bg-gray-50"
-                    >
-                      <div className="flex items-start gap-3">
-                        <Icon className="h-8 w-8 shrink-0 text-blue-600" />
-                        <div>
-                          <h4 className="text-[0.95rem] text-gray-800">{item.title}</h4>
-                          <p className="text-sm text-gray-500">
-                            {item.count} Guidelines
+                        {/* Title */}
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-[15px] font-medium leading-6 text-gray-800 group-hover:text-blue-600">
+                            {item.title}
+                          </h3>
+
+                          <p className="mt-0.5 text-sm text-gray-400">
+                            View PDF
                           </p>
                         </div>
-                      </div>
 
-                      <ChevronRight className="h-5 w-5 shrink-0 text-gray-400" />
-                    </Link>
-                  );
-                })}
+                        {/* Arrow */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5 shrink-0 text-gray-400 transition-all duration-200 group-hover:translate-x-1 group-hover:text-blue-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -1,5 +1,10 @@
 import { loginSchema } from "../validators/auth.validator.js";
 import { authenticateAdmin } from "../services/auth.service.js";
+import prisma from "../config/prisma.js";
+import jwt from "jsonwebtoken";
+const jti = crypto.randomUUID();
+
+
 
 export async function login(req, res) {
     try {
@@ -26,25 +31,26 @@ export async function login(req, res) {
             });
         }
 
-        // Prevent session fixation
-        await new Promise((resolve, reject) => {
-            req.session.regenerate((error) => {
-                if (error) {
-                    reject(error);
-                    return;
-                }
-
-                resolve();
-            });
-        });
-
-        req.session.user = admin;
+        // Generate JWT token
+        const token = jwt.sign(
+            {
+                id: admin.id,
+                username: admin.username,
+                      jti,
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: process.env.JWT_EXPIRES_IN || "1d",
+            }
+        );
 
         return res.status(200).json({
             success: true,
             message: "Login successful.",
+            token,
             user: admin,
         });
+
     } catch (error) {
         req.log?.error(error);
 
@@ -55,31 +61,42 @@ export async function login(req, res) {
     }
 }
 
-export function logout(req, res) {
-    req.session.destroy((error) => {
-        if (error) {
-            return res.status(500).json({
+export async function logout(req, res) {
+    // try {
+        const token = req.headers.authorization?.split(" ")[1];
+
+        if (!token) {
+            return res.status(401).json({
                 success: false,
-                message: "Unable to logout.",
+                message: "Token is required.",
             });
         }
 
-        res.clearCookie("admin_session");
+        const decoded = req.user;
+
+        await prisma.RevokedToken.create({
+            data: {
+                jti: decoded.jti,
+                expiresAt: new Date(decoded.exp * 1000),
+            },
+        });
 
         return res.status(200).json({
             success: true,
             message: "Logout successful.",
         });
-    });
+
+    // } catch (error) {
+    //     req.log?.error(error);
+
+    //     return res.status(500).json({
+    //         success: false,
+    //         message: "Unable to process logout.",
+    //     });
+    // }
 }
 
 export function me(req, res) {
-    if (!req.session?.user) {
-        return res.status(401).json({
-            success: false,
-            message: "Authentication required.",
-        });
-    }
 
     return res.status(200).json({
         success: true,

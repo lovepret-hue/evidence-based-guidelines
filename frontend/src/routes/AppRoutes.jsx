@@ -24,6 +24,7 @@ import ProtectedRoute from './ProtectedRoute'
 import Login from '../pages/auth/Login'
 import Dashboard from '../pages/auth/Dashboard'
 import CompletedGuidelines from '../pages/CompletedGuidelines'
+import Guidelines from '../pages/auth/Guidelines'
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -51,6 +52,7 @@ const AppRoutes = () => {
 
            <Route path='/login' element={<Login/>} />
            <Route path="/dashboard" element={<Dashboard />} />
+           <Route path='/documents/guidelines' element={<Guidelines/>} />
             {/* <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
             </Route> */}

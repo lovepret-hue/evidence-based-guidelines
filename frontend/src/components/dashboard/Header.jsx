@@ -2,7 +2,6 @@ import React from "react";
 import {
   Menu,
   Bell,
-  Search,
   User,
 } from "lucide-react";
 
@@ -20,7 +19,7 @@ const Header = ({ setIsOpen }) => {
           </button>
 
           {/* Search */}
-          <div className="hidden md:flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2">
+          {/* <div className="hidden md:flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2">
             <Search size={18} className="text-gray-400" />
 
             <input
@@ -28,7 +27,7 @@ const Header = ({ setIsOpen }) => {
               placeholder="Search..."
               className="w-40 bg-transparent text-sm outline-none lg:w-64"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Right */}

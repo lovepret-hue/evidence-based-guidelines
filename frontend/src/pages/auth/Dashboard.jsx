@@ -105,7 +105,7 @@ const Dashboard = () => {
 
           {/* Page Heading */}
           <div className="mb-6">
-            <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl">
+            <h1 className="text-xl font-bold text-gray-800 sm:text-3xl">
               Dashboard
             </h1>
 

@@ -10,6 +10,8 @@ import authRoutes from "./routes/auth.routes.js";
 import session from "express-session";
 import bannerRoutes from "./routes/banner.routes.js";
 import whatsNewRoutes from "./routes/whatsNew.routes.js";
+import importantLinksRoutes from "./routes/importantLinks.routes.js";
+import documentRepository from "./routes/documentRepository.routes.js";
 import path from "path";
 
 const app = express();
@@ -131,7 +133,8 @@ app.use("/uploads",express.static(path.join(process.cwd(), "uploads")));
 
 // What's New API
 app.use("/api/whats-new",whatsNewRoutes);
-
+app.use("/api/important-links",importantLinksRoutes);
+app.use("/api/about-us",documentRepository);
 
 /*
 |--------------------------------------------------------------------------

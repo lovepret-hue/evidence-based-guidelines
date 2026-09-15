@@ -53,3 +53,28 @@ model RevokedToken {
   expiresAt DateTime
   createdAt DateTime @default(now())
 }
+model ImportantLink {
+  id            Int      @id @default(autoincrement())
+  title         String
+  sub_title     String?
+  external_link String?
+  pdf           String?
+  icon          String?
+  status        Boolean  @default(true)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  @@map("important_links")
+}
+
+model DocumentRepository {
+  id            Int      @id @default(autoincrement())
+  title         String
+  document_date DateTime
+  english_pdf   String?
+  hindi_pdf     String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  @@map("document_repositories")
+}
